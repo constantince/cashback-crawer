@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Cashback Crawler",
+  "version": "1.0",
+  "description": "A Chrome extension for crawling cashback information",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.cashbackmonitor.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+} 
